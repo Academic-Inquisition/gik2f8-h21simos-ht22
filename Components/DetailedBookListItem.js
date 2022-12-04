@@ -8,7 +8,7 @@ const DetailedBookListItem= (book) => { // Lambda-function which takes in a book
   // Grabbing from the book json element provided, the image (replaced by placeholder if missing), releaseDate, author, title, pages.
   // I've also added a section for "Description" content in-case the API supports this in the
   return `
-    <div>
+    <section>
       <div class="flex flex-row divide-x divide-zinc-700">
         <a class="w-3/4 h-1/1 p-2 pr-5 pl-0" href="${image}"><img class="" src="${image}" alt="Book Cover Image"></a>
         <div class="flex flex-col">
@@ -23,6 +23,6 @@ const DetailedBookListItem= (book) => { // Lambda-function which takes in a book
           </section>
         </div>
       </div>
-    </div>
+    </section>
   `
 }
