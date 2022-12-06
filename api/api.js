@@ -32,8 +32,6 @@ async function getBooksFromAPI() {
  * @returns Returns the JSON-formatted Data from the API for the given Book ID.
  */
 async function getBookByID(id) {
-    var baseURL = url;                                                      // Sets a local variable called 'baseURL' as the stored API URL
-    baseURL += ('/' + id.toString())                                        // Adds on the id to create a request url to get the data for that specific book.
-    const jsonData = await fetch(baseURL).then((result) => result.json());  // Attempts to fetch the data, if successful it stores it as json.
-    return jsonData;                                                        // Returns the JSON-formatted data for the book.
+    var baseURL = url + ('/' + id.toString());                             // Adds on the id to create a request url to get the data for that specific book.
+    return await fetch(baseURL).then((result) => result.json());;           // Attempts to fetch the data, if successful it returns the JSON-formatted data for the book.
 }

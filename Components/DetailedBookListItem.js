@@ -1,14 +1,13 @@
 const DetailedBookListItem= (book) => { // Lambda-function which takes in a book.
   let image = book.coverImage;          // Grabs the coverImage string
   if (!image) {                         // If it doesnt exists then replace it with the wikimedia "No-Image-Placeholder.svg".
-    console.log(book.coverImage)
     image = "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg";
   }
   // Finally returns a formatted HTML string structure for the item itself with some dynamic elements.
   // Grabbing from the book json element provided, the image (replaced by placeholder if missing), releaseDate, author, title, pages.
   // I've also added a section for "Description" content in-case the API supports this in the
   return `
-    <section>
+    <section id="detailSection" class="border-slate-700 border-t py-2">
       <div class="flex flex-row divide-x divide-zinc-700">
         <a class="w-3/4 h-1/1 p-2 pr-5 pl-0" href="${image}"><img class="" src="${image}" alt="Book Cover Image"></a>
         <div class="flex flex-col">
